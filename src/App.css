@@ -1,38 +1,1598 @@
-.App {
-  text-align: center;
+.container-fluid {
+    padding: 0 !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1.site-title {
+    font-size: 3.6rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* h2.site-description {
+    font-size: 5.6rem;
+} */
+
+/* ******************************************* */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    border: 0px;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+html {
+    font-size: 62.5%;
+    /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+    overflow-y: scroll;
+    /* Keeps page centred in all browsers regardless of content height */
+    -webkit-text-size-adjust: 100%;
+    /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+    -ms-text-size-adjust: 100%;
+    /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 
-.App-link {
-  color: #61dafb;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    /* tables still need 'cellspacing="0"' in the markup */
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+caption,
+th,
+td {
+    font-weight: normal;
+    text-align: left;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+}
+
+blockquote,
+q {
+    quotes: "" "";
+}
+
+
+a:hover,
+a:active {
+    /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+    outline: 0;
+}
+
+a img,
+a:hover img {
+    border-bottom: 0px none;
+}
+
+/* =Reset
+-------------------------------------------------------------- */
+
+/* html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    border: 0px;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+} */
+
+html {
+    font-size: 62.5%;
+    /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+    overflow-y: scroll;
+    /* Keeps page centred in all browsers regardless of content height */
+    -webkit-text-size-adjust: 100%;
+    /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+    -ms-text-size-adjust: 100%;
+    /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    /* tables still need 'cellspacing="0"' in the markup */
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+caption,
+th,
+td {
+    font-weight: normal;
+    text-align: left;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+}
+
+blockquote,
+q {
+    quotes: "" "";
+}
+
+
+a:hover,
+a:active {
+    /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+    outline: 0;
+}
+
+a img,
+a:hover img {
+    border-bottom: 0px none;
+}
+
+/* =Global
+----------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+    color: #125716 !important;
+    font-family: Roboto, Arial, Verdana, Helvetica, sans-serif !important;
+    font-size: 1.6rem !important;
+    line-height: 1.5 !important;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+    font-family: "Janda Elegant Handwriting", Garamond, Georgia, serif;
+}
+
+h1 {
+    font-size: 200%;
+}
+
+h2 {
+    font-size: 180%;
+}
+
+h3 {
+    font-size: 160%;
+}
+
+h4 {
+    font-size: 140%;
+}
+
+h5 {
+    font-size: 120%;
+}
+
+h6 {
+    font-size: 100%;
+}
+
+hr {
+    border: 2px dashed #ccc;
+    height: 0;
+    margin-bottom: 1.5em;
+}
+
+/* Text elements */
+p {
+    margin: 1.0em 0;
+}
+
+ul,
+ol {
+    margin: 0 0 1.5em 3em;
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin-bottom: 0;
+    margin-left: 1.5em;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 1.5em 1.5em;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+
+blockquote {
+    background: transparent url(images/quote.png) left top no-repeat;
+    color: #379A42;
+    margin: 0;
+    padding: 0 0.5em 0 40px;
+    font-family: "Port Lligat Sans", Helvetica, sans-serif;
+    min-height: 26px;
+}
+
+address {
+    margin: 0 0 1.5em;
+}
+
+pre {
+    background: #eee;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    padding: 1.6em;
+    overflow: auto;
+    max-width: 100%;
+}
+
+
+
+
+/* Links */
+a {
+    color: #CD7B0F;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #ffb048;
+}
+
+
+/* Alignment */
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Text meant only for screen readers */
+.assistive-text {
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+
+/* =Menu
+----------------------------------------------- */
+#nav-menu-wrapper {
+    margin-left: 150px;
+}
+
+.main-navigation {
+    clear: both;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    min-height: 30px;
+    margin-bottom: 0;
+}
+
+.main-navigation ul {
+    list-style: none;
+    margin: 0 auto;
+    padding-left: 0;
+}
+
+.main-navigation div>ul.menu li,
+.main-navigation .menu>ul li {
+    position: relative;
+}
+
+.main-navigation div>ul.menu>li,
+.main-navigation .menu>ul>li {
+    line-height: normal;
+    font-size: 90%;
+    z-index: 1;
+    float: left;
+    border-right: 1px solid #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.main-navigation div>ul.menu>li:last-of-type,
+.main-navigation .menu>ul>li:last-of-type {
+    border-right: 0 none;
+}
+
+/*all*/
+.main-navigation div>ul.menu>li a,
+.main-navigation .menu>ul>li a {
+    padding: 8px 15px;
+    margin: 0;
+    background-color: #ffb048;
+}
+
+/*first level*/
+.main-navigation div>ul.menu>li.current_page_item>a,
+.main-navigation .menu>ul>li.current_page_item>a,
+.main-navigation div>ul.menu>li.current-menu-item>a,
+.main-navigation .menu>ul>li.current-menu-item>a {
+    background-color: #3daa4a;
+}
+
+/*first level*/
+.main-navigation div>ul.menu>li>a:hover,
+.main-navigation .menu>ul>li>a:hover {
+    background-color: #3daa4a;
+}
+
+.main-navigation div>ul.menu>li>a,
+.main-navigation .menu>ul>li>a {
+    padding: 8px 15px;
+    margin: 0;
+    color: #fff;
+    background-color: #318a3b;
+}
+
+.main-navigation a {
+    border: 0 none !important;
+    color: #fff !important;
+    display: block;
+    text-decoration: none;
+}
+
+.main-navigation ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 99999;
+    width: 180px;
+    margin: 0;
+    border-left: 1px solid #fff;
+}
+
+.main-navigation ul ul ul {
+    left: 180px;
+    top: 0;
+    position: absolute;
+}
+
+.main-navigation ul ul li {
+    display: block;
+}
+
+.main-navigation ul ul li a {
+    color: #fff;
+    display: block;
+    height: 100%;
+    margin: 0;
+}
+
+
+.main-navigation ul ul a:hover {
+    background-color: #fec881;
+}
+
+.main-navigation ul li:hover>ul {
+    display: block;
+}
+
+
+
+/* =Content
+----------------------------------------------- */
+
+
+.archive #content,
+.search #content {
+    padding-top: 0;
+}
+
+#content article.post,
+#content article.page,
+#content article.attachment {
+    padding-bottom: 40px;
+    padding-left: 50px;
+    background: url(images/postLeftCorner.png) no-repeat left bottom;
+}
+
+#content article.post,
+#content article.page {
+    position: relative;
+}
+
+.featured-post {
+    position: absolute;
+    top: 30px;
+    left: 120px;
+    background: url(images/featuredPost.png) no-repeat left top;
+    width: 200px;
+    height: 73px;
+    padding-left: 60px;
+    padding-top: 18px;
+    font-family: "Janda Elegant Handwriting", Garamond, Georgia, serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #438F55;
+    text-shadow: 1px 2px #EBED6D;
+}
+
+.entry-wrapper {
+    background: url(images/postRightCorner.png) no-repeat right top;
+    padding-right: 53px;
+    padding-top: 45px;
+}
+
+.entry-wrapper-inner {
+    min-height: 200px;
+    background: url(images/postTransparentBk.png) repeat;
+    border-radius: 5px;
+    padding: 1em 1.5em;
+}
+
+
+.entry-meta {
+    clear: both;
+    font-size: 80%;
+}
+
+article.post .entry-meta {
+    text-align: right;
+}
+
+footer.entry-meta {
+    text-align: right;
+}
+
+
+.byline {
+    display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+    display: inline;
+}
+
+.entry-content,
+.entry-summary {
+    margin: 0;
+    word-wrap: break-word;
+    font-size: 16.2px;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+
+/* =Asides
+----------------------------------------------- */
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+    display: none;
+}
+
+
+/* =Media
+----------------------------------------------- */
+
+.site-header img,
+.entry-content img,
+.comment-content img,
+.widget img {
+    max-width: 100%;
+    /* Fluid images for posts, comments, and widgets */
+}
+
+.site-header img,
+.entry-content img,
+img[class*="align"],
+img[class*="wp-image-"] {
+    height: auto;
+    /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+
+.site-header img,
+.entry-content img,
+img.size-full {
+    max-width: 100%;
+}
+
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+.wp-caption {
+    border-radius: 3px;
+    max-width: 100%;
+    background-color: #ffb048;
+    border: 3px solid #ffb048;
+}
+
+.wp-caption.aligncenter,
+.wp-caption.alignleft,
+.wp-caption.alignright {
+    margin-bottom: 1.5em;
+}
+
+.wp-caption img {
+    display: block;
+    margin: 1.2% auto 0;
+    max-width: 98%;
+}
+
+.wp-caption-text {
+    text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+    margin: 0.8075em 0;
+}
+
+#content .gallery {
+    margin-bottom: 1.5em;
+}
+
+
+#content .gallery a img {
+    height: auto;
+    max-width: 90%;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 5px solid #ffb048;
+}
+
+#content .gallery dd {
+    margin: 0;
+}
+
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+
+/* =Navigation
+----------------------------------------------- */
+
+#content .site-navigation {
+    margin: 0;
+    overflow: hidden;
+    padding: 20px;
+}
+
+#content .prev-next {
+    margin: 0;
+    overflow: hidden;
+    padding: 20px 20px 10px 20px;
+}
+
+#content .nav-previous {
+    float: left;
+    width: 50%;
+}
+
+#content .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+}
+
+.next-image {
+    float: right;
+    text-align: right;
+}
+
+.nav-next a,
+.nav-previous a {
+    text-decoration: none;
+    color: #CD7B0F;
+}
+
+.page-link {
+    color: #CD7B0F !important;
+    border: none !important;
+}
+
+ul.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+}
+
+/* =Thumbnails
+----------------------------------------------- */
+.tenderSpring-post-thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    float: left;
+    margin: 20px 20px 0 0;
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+}
+
+.tenderSpring-post-thumbnail-inner {
+    background: url("images/postThumbnail.png") no-repeat left bottom;
+    width: 100px;
+    height: 100px;
+
+}
+
+img.wp-post-image {
+    display: none;
+}
+
+
+
+/* =Theme Styles
+----------------------------------------------- */
+
+/* Main */
+
+body {
+    background: #fff url(images/middle.png) left top repeat-x;
+    color: #125716;
+    font-size: 1.8em;
+}
+
+#containerForLeftBk {
+    background: url("images/leftBk.png") repeat-y scroll left top transparent;
+}
+
+#containerForRightBk {
+    background: url("images/rightBk.png") repeat-y scroll right top transparent;
+}
+
+#page {
+    background: url("images/upperLeft.png") no-repeat scroll left top transparent;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+#container {
+    background: url("images/upperRight.png") no-repeat scroll right top transparent;
+    margin: 0;
+    padding-right: 40px;
+}
+
+#main {
+    font-size: .9em;
+    position: relative;
+}
+
+/* Header */
+
+#masthead {
+    padding-left: 110px;
+}
+
+#masthead hgroup {
+    padding: 80px 50px 1em 50px;
+}
+
+#masthead .site-title,
+#masthead .site-title a {
+    font-family: "Janda Elegant Handwriting", Garamond, Georgia, serif;
+    margin: 0;
+    padding-top: 1em;
+    line-height: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #379A42;
+    text-shadow: 2px 1px #EEEA1B;
+}
+
+#masthead .site-description {
+    color: #FFB048;
+    font-family: "Port Lligat Sans", Helvetica, sans-serif;
+    font-size: 2.5rem;
+    padding-left: 1em;
+}
+
+/* Posts */
+
+#primary {
+    border: 0;
+    margin: 0 0 0 88px;
+}
+
+article {
+    padding: 1em;
+}
+
+.edit-link {
+    font-size: 80%;
+    text-transform: uppercase;
+    display: block;
+    background-color: #318a3b;
+    border-radius: 5px;
+    padding: 0 .5em;
+    float: left;
+    margin-right: 1em;
+}
+
+.edit-link.featured {
+    margin-left: 80px
+}
+
+a.post-edit-link,
+a.post-edit-link:hover {
+    display: block;
+    padding: 3px 5px;
+    color: #fff;
+    border-radius: 4px;
+    border-bottom: 0px none;
+    text-decoration: none;
+}
+
+.entry-content:before,
+.entry-content:after {
+    content: "";
+    display: table;
+}
+
+.entry-content:after {
+    clear: both;
+}
+
+.entry-content {
+    zoom: 1;
+    /* For IE 6/7 */
+}
+
+.entry-title,
+.entry-title a {
+    border-bottom: 0px none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    color: #318a3b;
+    text-decoration: none;
+    text-shadow: 2px 1px #EEEA1B;
+    word-wrap: break-word;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+h1.page-title {
+    font-weight: bold;
+    line-height: 1em;
+    padding: 20px 0.5em 0 62px;
+    font-family: "Port Lligat Sans", Helvetica, sans-serif;
+}
+
+header.entry-header {
+    width: 100%;
+    clear: both;
+    display: inline-block;
+}
+
+.page-template-page-nosidebar-php #primary {
+    float: none;
+    margin: 0 auto;
+}
+
+/* 404 */
+
+.error404 .widget {
+    width: 30%;
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+    float: left;
+}
+
+.error404 #primary,
+.attachment #primary,
+.page-template-page-nosidebar-php #primary {
+    float: none;
+    margin: 0 0 0 88px;
+}
+
+.error404 #content article {
+    margin-bottom: 0;
+}
+
+.error404 h2.widget-title {
+    font-size: 140%;
+}
+
+/* Sidebars/Widgets */
+
+
+
+aside {
+    word-wrap: break-word;
+    font-family: "Port Lligat Sans", Helvetica, sans-serif;
+    padding-top: 1em;
+}
+
+aside h2 {
+    font-family: "Port Lligat Sans", Helvetica, sans-serif;
+}
+
+
+
+aside h2 {
+    clear: none;
+    color: #379A42;
+    font-size: 1.3em;
+    margin: 0;
+    padding: 10px 0 3px 10px;
+    font-weight: bold;
+    line-height: 1em;
+}
+
+#secondary img {
+    max-width: 100%;
+    height: auto;
+}
+
+aside ul {
+    list-style: none;
+    padding: .5em 0;
+    margin: 0 1em;
+}
+
+
+aside ul li {
+    list-style-type: square;
+    padding-left: .3em;
+    margin: 0 1em;
+    color: #CD7B0F;
+}
+
+aside ul li span {
+    color: #379A42;
+}
+
+h2.widget-title,
+h2.widget-title a {
+    border-bottom: 0px none;
+}
+
+a.rsswidget img {
+    float: right;
+    position: relative;
+    top: 10px;
+}
+
+aside h2 {
+    padding: 35px 0 30px 40px;
+    background: url(images/searchBk.png) left top no-repeat;
+}
+
+aside {
+    padding: 15px 0 50px 0;
+    background: url(images/searchBkButtom.png) left bottom no-repeat;
+}
+
+/* Footer */
+
+footer#colophon {
+    clear: both;
+    color: #379A42;
+    font-size: 85%;
+    padding: 80px 110px 0 110px;
+}
+
+.site-info {
+    float: left;
+}
+
+#top {
+    text-align: right;
+    display: block;
+}
+
+footer a {
+    color: #318a3b;
+}
+
+#footerMiddle {
+    background: url(images/bottomMiddle.png) repeat-x scroll left top transparent;
+}
+
+#footerRight {
+    background: url(images/bottomRight.png) no-repeat right top;
+}
+
+#footerLeft {
+    background: url(images/bottomLeft.png) no-repeat left top;
+    min-height: 150px;
+}
+
+/* Comments */
+
+#comments {
+    padding-bottom: 2em;
+    margin: 0 2em 0 0;
+}
+
+#commentform .required {
+    display: inline-block;
+    color: #c4513f;
+    font-weight: bold;
+}
+
+#commentform p.comment-form-author label,
+#commentform p.comment-form-email label,
+#commentform p.comment-form-url label {
+    width: 5em;
+    display: block;
+    float: left;
+}
+
+#respond {
+    padding: 60px 20px 20px 60px;
+    background: url(images/commentCorner.png) left top no-repeat;
+}
+
+h2.comments-title {
+    padding: 2em 20px 0 20px;
+}
+
+#comments h2.comments-title,
+#reply-title {
+    font-family: "Port Lligat Sans", Helvetica, sans-serif;
+    color: #FFB048;
+}
+
+h3#comments {
+    padding: 0 20px;
+}
+
+li.comment {
+    min-height: 100px;
+}
+
+li.comment article {
+    border-bottom: 0px none;
+}
+
+li.comment,
+li.pingback,
+li.trackback {
+    border-bottom: 2px dashed #ccc;
+    padding: 20px;
+    clear: both;
+}
+
+li.comment blockquote {
+    clear: left;
+}
+
+li.pingback,
+li.trackback {
+    background-repeat: no-repeat;
+    background-color: #EEE;
+}
+
+li.pingback p,
+li.trackback p {
+    clear: both;
+    border: 0px none;
+    padding: 0;
+    min-height: 25px;
+    word-wrap: break-word;
+    width: 480px;
+    margin: 0;
+}
+
+ol.commentlist,
+ul.commentlist {
+    list-style: none;
+    margin: 0 0 1em 0;
+    padding: 0;
+}
+
+
+
+ol.commentlist ul.children,
+ul.commentlist ul.children {
+    list-style: none;
+    margin: 0;
+}
+
+ol.commentlist ul.children li,
+ul.commentlist ul.children li {
+    list-style: none;
+    border-bottom: 0px none;
+}
+
+ul.children {
+    padding: 0;
+}
+
+ul.children .comment-author {
+    float: none;
+    width: auto;
+    border-right: 0 none;
+    margin: 0;
+    min-height: 0;
+    clear: left;
+    background: none;
+    padding: 0;
+    text-align: left;
+}
+
+ul.children .comment-author cite.fn {
+    font-weight: bold;
+    width: auto;
+    float: none;
+}
+
+ul.children .comment-content p,
+ul.children .comment-content .comment-meta,
+ul.children .reply {
+    padding-left: 0;
+}
+
+ul.commentlist>li.comment>ul.children,
+ol.commentlist>li.comment>ul.children {
+    padding-left: 180px;
+}
+
+.thread-even {
+    background-color: rgba(250, 250, 250, .9);
+}
+
+.avatar {
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.bypostauthor {
+    background-color: rgba(250, 250, 250);
+}
+
+
+
+.comment-author {
+    width: 160px;
+    float: left;
+    background: url(images/commentSeparator.png) no-repeat right top;
+    margin-right: 10px;
+    min-height: 80px;
+    padding: 30px 40px 0 0;
+    text-align: right;
+}
+
+.comment-author cite.fn {
+    font-weight: bold;
+    word-wrap: break-word;
+    width: 100px;
+    display: block;
+    float: left;
+    font-style: normal;
+    font-family: "Port Lligat Sans", Helvetica, sans-serif;
+}
+
+.comment-author cite.fn a {
+    text-decoration: none;
+}
+
+.comment-form-comment label {
+    display: block;
+    width: 85px;
+    float: left;
+    font-weight: bold;
+}
+
+.commentmetadata {
+    text-transform: uppercase;
+    color: #666;
+    font-size: 11px;
+    margin-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.commentmetadata a {
+    text-decoration: none;
+}
+
+.comment-navigation {
+    border-bottom: 1px dashed #e5e2cd;
+}
+
+.nocomments {
+    padding: 20px;
+    margin-bottom: 0;
+}
+
+.says {
+    display: none;
+}
+
+#commentform {
+    background: url(images/tree.png) no-repeat right bottom;
+    padding-right: 120px;
+    min-height: 300px;
+}
+
+.comment-form-comment textarea {
+    background-color: transparent;
+}
+
+/* Calendar */
+
+table#wp-calendar caption {
+    text-align: center;
+    font-weight: bold;
+}
+
+table#wp-calendar td#next {
+    text-align: right;
+}
+
+#wpstats {
+    display: none;
+}
+
+/* =Jetpack
+------------------------------------------------*/
+
+/* Hides navigation links and site footer when infinite scroll is active */
+.infinite-scroll #nav-below,
+.infinite-scroll.neverending #colophon,
+.infinite-scroll.neverending .footer-bottom {
+    display: none;
+}
+
+/* Shows the footer again in case all posts have been loaded */
+.infinity-end.neverending #colophon,
+.infinity-end.neverending .footer-bottom {
+    display: block;
+}
+
+#infinite-footer .container {
+    background: rgba(255, 255, 255, .75);
+    border: none;
+}
+
+#infinite-footer .blog-credits,
+#infinite-footer .blog-credits a,
+#infinite-footer .blog-credits a:hover,
+#infinite-footer .blog-info a,
+#infinite-footer .blog-info a:hover {
+    color: #318A3B;
+}
+
+
+#infinite-handle span {
+    background-color: #F9FED0;
+    border-radius: 5px;
+    display: block;
+    font-size: 1em;
+    color: #318A3B;
+    margin: 0 10px;
+}
+
+.infinite-loader {
+    margin: 10px auto;
+    width: 34px
+}
+
+.sharedaddy:before,
+.sharedaddy:after {
+    content: "";
+    display: table;
+}
+
+.sharedaddy:after {
+    clear: both;
+}
+
+
+
+
+
+
+
+#more,
+.tinynav {
+    display: none;
+}
+
+/* =Media Queries
+----------------------------------------*/
+
+/* --- Smartphones and small Tablet PCs --- */
+
+@media screen and (max-width:600px) {
+    #nav-menu-wrapper ul {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .featured-post {
+        display: none;
+    }
+
+    #more {
+        display: block;
+        height: 50px;
+    }
+
+    h1 {
+        font-size: 150%;
+    }
+
+    h2 {
+        font-size: 130%;
+    }
+
+    h3 {
+        font-size: 110%;
+    }
+
+    h4 {
+        font-size: 90%;
+    }
+
+    h5 {
+        font-size: 70%;
+    }
+
+    h6 {
+        font-size: 50%;
+    }
+
+    #masthead,
+    #main,
+    #page,
+    #primary,
+    #secondary {
+        float: none;
+        width: auto;
+        position: static;
+        margin: 0;
+        padding: 0;
+    }
+
+    body,
+    #container,
+    #containerForLeftBk,
+    #containerForRightBk,
+    #page,
+    #footerMiddle,
+    #footerRight,
+    #footerLeft {
+        background: none;
+        margin: 0;
+        padding: 0;
+        min-height: 0;
+    }
+
+    #masthead hgroup {
+        padding: 1em 1em 0 1.5em;
+    }
+
+    #masthead .site-title,
+    #masthead .site-title a {
+        padding: 0;
+    }
+
+    .tinynav {
+        display: block;
+        font-size: 0.8em;
+    }
+
+    #nav-menu-wrapper {
+        margin-left: 3em;
+    }
+
+
+
+    .main-navigation {
+        min-height: auto;
+    }
+
+    #content article.post,
+    #content article.page,
+    #content article.attachment,
+    .entry-wrapper {
+        margin: 0;
+    }
+
+    #content article.post,
+    #content article.page,
+    #content article.attachment {
+        background-position: -40px bottom;
+        padding: 0 0 20px 10px;
+    }
+
+    .entry-wrapper {
+        background: url(images/postRightCornerChopped.png) right top no-repeat;
+        padding: 45px 10px 0 0;
+    }
+
+    #secondary aside {
+        background-color: #f9fed0;
+        margin: 1em 10px;
+        padding: 0 1em 1em 2em;
+        border-radius: 5px;
+    }
+
+    footer#colophon {
+        padding: 1em 0;
+        font-size: 75%;
+    }
+
+    #top,
+    .site-info {
+        float: none;
+        text-align: left;
+        padding: 0 3em;
+    }
+
+    .error404 #primary,
+    .attachment #primary,
+    .page-template-page-nosidebar-php #primary {
+        margin: 0;
+    }
+
+    #commentform {
+        padding-right: 0;
+    }
+
+    #commentform input[type="text"],
+    #commentform textarea {
+        width: 95%;
+    }
+
+    #search-bar h2.widget-title {
+        font-family: Arial, sans-serif;
+        font-size: .8em;
+        margin: 0 0 -1em 1em;
+    }
+
+    #search-bar #searchsubmit {
+        display: none;
+    }
+
+    #search-bar form#searchform {
+        background: url(images/searchBk.png) left top no-repeat;
+        padding: 20px 0 0 30px;
+        min-height: 60px;
+        margin-left: -20px;
+        font-size: .8em;
+    }
+
+    #search-bar form#searchform input {
+        width: 60%;
+    }
+
+    .infinite-scroll #secondary {
+        display: none;
+    }
+
+    .infinite-scroll.infinity-end #secondary {
+        display: block;
+    }
+
+}
+
+@media screen and (max-width:480px) {}
+
+/* *************моё********************** */
+
+blockquote {
+    padding-left: 50px !important;
+}
+
+.header.active {
+    background-color: #3daa4a !important;
+}
+
+.rubrics.active {
+    color: #CD7B0F;
+    font-weight: 600;
+    outline: 0;
+    text-decoration: none;
 }
