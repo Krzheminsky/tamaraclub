@@ -1,11 +1,10 @@
-import './Footer.css';
 
 function Footer() {
     return (
         <div id="footerMiddle">
             <div id="footerRight">
                 <div id="footerLeft">
-                    <footer id="colophon" class="site-footer" role="contentinfo">
+                    <footer id="colophon" className="site-footer" role="contentinfo">
                         <div
                             id="top" href="index.html#top"
                             onClick={() => {

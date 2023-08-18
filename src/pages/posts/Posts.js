@@ -12,12 +12,14 @@ function Posts({
     nextPage,
     postPerPage,
     totalPosts,
-    paginate }) {
+    paginate,
+    rubricate,
+    getPostname,
+    postName }) {
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [posts])
-
 
     if (loading) {
         return <h2>Loading...</h2>
@@ -28,35 +30,45 @@ function Posts({
             <div id="primary" className="site-content">
                 <div id="content" role="main">
                     {
-                        currentRubric === 'Усі рубрики' ? null :
+                        (currentRubric === 'Усі рубрики' || postName) ? null :
                             <h1 className="page-title">Рубрика:
                                 <span> {currentRubric}</span>
                             </h1>
                     }
                     {
-                        posts.map((post, i) => (
-                            <article className="post" key={i}>
-                                <div className="entry-wrapper">
-                                    <div className="entry-wrapper-inner">
-                                        <header className="entry-header">
-                                            <h1 className="entry-title">{post.name}</h1>
-                                        </header>
-                                        <div className="entry-content">
-                                            <img
-                                                className="alignright size-full"
-                                                src={require('../../images/' + post.image)}
-                                                alt={post.rubric} width="35%"
-                                                sizes="(max-width: 555px) 100vw, 555px" />
-                                            <div dangerouslySetInnerHTML={{ __html: post.post }} />
+                        posts.map((post, i) => {
+                            return (
+                                <article className="post" key={i}>
+                                    <div className="entry-wrapper">
+                                        <div className="entry-wrapper-inner">
+                                            <header className="entry-header">
+                                                <h1
+                                                    onClick={() => getPostname(post.name)}
+                                                    style={{ cursor: 'pointer' }}
+                                                    className="entry-title">{post.name}</h1>
+                                            </header>
+                                            <div className="entry-content">
+                                                <img
+                                                    className="alignright size-full"
+                                                    src={require('../../images/' + post.image)}
+                                                    alt={post.rubric} width="35%"
+                                                    sizes="(max-width: 555px) 100vw, 555px" />
+                                                <div dangerouslySetInnerHTML={{ __html: post.post }} />
 
+                                            </div>
+                                            <footer className="entry-meta">
+                                                <div className="cat-links"
+
+                                                > Рубрика: <span
+                                                    onClick={() => { rubricate(post.rubric); window.scrollTo(0, 0); }}
+                                                    style={{ cursor: 'pointer', color: "#CD7B0F" }}
+                                                >{post.rubric}</span> </div>
+                                            </footer>
                                         </div>
-                                        <footer className="entry-meta">
-                                            <span className="cat-links"> Рубрика: {post.rubric} </span>
-                                        </footer>
                                     </div>
-                                </div>
-                            </article>
-                        ))
+                                </article>
+                            )
+                        })
                     }
                 </div>
             </div>
@@ -73,6 +85,7 @@ function Posts({
                             postPerPage={postPerPage}
                             totalPosts={totalPosts}
                             paginate={paginate}
+
                         />
                     </div>
                 </div>

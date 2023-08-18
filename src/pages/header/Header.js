@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Header() {
+function Header({ rubricate }) {
     return (
         <div>
             <header id="masthead" className="site-header" role="banner">
@@ -14,7 +14,7 @@ function Header() {
                 <nav role="navigation" className="site-navigation main-navigation">
                     <div className="menu-menu-1-container">
                         <ul id="menu-menu-1" className="menu">
-                            <li className="menu-item">
+                            <li className="menu-item" onClick={() => rubricate('Усі рубрики')}>
                                 <NavLink className="header" to="/" aria-current="page">Головна</NavLink></li>
                             <li className="menu-item">
                                 <NavLink className="header" to="/about">Про матусю</NavLink>

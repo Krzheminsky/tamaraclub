@@ -10,23 +10,23 @@ function Paginations({ postPerPage, totalPosts, paginate }) {
 
 
     return (
+
         <div className="paginations">
-            <ul className="pagination">
-                {
-                    pageNumbers.map(number => (
-                        <li
-                            className='page-item page-link'
-                            key={number}
-                            style={{ cursor: 'pointer' }}
-                            onClick={() => paginate(number)}
-                        >
-                            {number}
-                        </li>
-                    ))
-                }
-            </ul>
-
-
+            {totalPosts === 1 ? null :
+                <ul className="pagination">
+                    {
+                        pageNumbers.map(number => (
+                            <li
+                                className='page-item page-link'
+                                key={number}
+                                style={{ cursor: 'pointer' }}
+                                onClick={() => paginate(number)}
+                            >
+                                {number}
+                            </li>
+                        ))
+                    }
+                </ul>}
         </div>
     );
 }

@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Header from './pages/header/Header';
 import Posts from './pages/posts/Posts';
 import Rubrics from './pages/rubrics/Rubrics';
+import Entries from './pages/entries/Entries';
 import Footer from './pages/footer/Footer';
 
 import { Routes, Route } from 'react-router-dom';
@@ -19,35 +20,40 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage] = useState(3);
   const [currentRubric, setCurrentRubric] = useState('Усі рубрики');
-
-  // useEffect(() => {
-  //   const getPosts = async () => {
-  //     setLoading(true);
-  //     const res = await data;
-  //     setPosts(res);
-  //     setLoading(false)
-  //   }
-
-  //   getPosts();
-
-  // }, [])
+  const [postName, setPostName] = useState('');
 
   useEffect(() => {
     let rubricPosts = [];
-    if (currentRubric === 'Усі рубрики') {
-      setPosts(data);
+    let onePost = [];
+    if (!postName) {
+
+      if (currentRubric === 'Усі рубрики') {
+        setPosts(data);
+        setCurrentPage(1);
+      } else {
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].rubric === currentRubric) {
+            rubricPosts.push(data[i]);
+          }
+        }
+        setPosts(rubricPosts);
+        setCurrentPage(1);
+      }
     } else {
       for (let i = 0; i < data.length; i++) {
-        if (data[i].rubric === currentRubric) {
-          rubricPosts.push(data[i]);
+        if (data[i].name === postName) {
+          onePost.push(data[i])
+
         }
       }
-      setPosts(rubricPosts);
+      setPosts(onePost);
       setCurrentPage(1);
     }
-    // setCurrentPage(1);
+
+
+    // setPostName('');
     setLoading(false);
-  }, [currentRubric])
+  }, [currentRubric, postName])
 
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
@@ -56,13 +62,9 @@ function App() {
   const paginate = pageNumber => setCurrentPage(pageNumber);
   const nextPage = () => setCurrentPage(prev => prev + 1);
   const prevPage = () => setCurrentPage(prev => prev - 1);
-
-  const rubricate = rubric => setCurrentRubric(rubric);
-
+  const rubricate = rubric => { setCurrentRubric(rubric); setPostName(''); }
   const lastPage = Math.ceil(posts.length / postPerPage);
-
-
-
+  const getPostname = post => setPostName(post)
 
   return (
     <Container fluid>
@@ -73,7 +75,7 @@ function App() {
             <div id="container">
               <Row>
                 <Col>
-                  <Header />
+                  <Header rubricate={rubricate} />
                 </Col>
               </Row>
               <Row>
@@ -90,7 +92,12 @@ function App() {
                       nextPage={nextPage}
                       postPerPage={postPerPage}
                       totalPosts={posts.length}
-                      paginate={paginate} />} />
+                      paginate={paginate}
+                      rubricate={rubricate}
+                      getPostname={getPostname}
+                      postName={postName}
+                    />}
+                    />
                     <Route exact path="/about" element={<About />} />
                     <Route exact path="/collections" element={<Collections />} />
                     <Route exact path="/public" element={<PublicEvents />} />
@@ -98,6 +105,10 @@ function App() {
                 </Col>
                 <Col lg={3}>
                   <Rubrics
+                    rubricate={rubricate}
+                  />
+                  <Entries
+                    getPostname={getPostname}
                     rubricate={rubricate}
                   />
                 </Col>
