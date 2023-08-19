@@ -2,7 +2,7 @@ import React from "react";
 import { data } from '../../data/data';
 import { Link } from "react-router-dom";
 
-function Rubrics({ rubricate }) {
+function Rubrics({ rubricate, setLess }) {
 
     const posts = data;
     const allPosts = data.length;
@@ -13,7 +13,7 @@ function Rubrics({ rubricate }) {
             <h2 className="widget-title">Рубрики</h2>
             <ul>
                 <li
-                    onClick={() => rubricate('Усі рубрики')}
+                    onClick={() => { rubricate('Усі рубрики'); setLess(true) }}
                     style={{ cursor: 'pointer' }}
                 >
                     <Link className="nav-link" to="/" aria-current="page">
@@ -30,7 +30,7 @@ function Rubrics({ rubricate }) {
                         return (
                             <li
                                 key={i}
-                                onClick={() => rubricate(rubric)}
+                                onClick={() => { rubricate(rubric); setLess(true) }}
                                 style={{ cursor: 'pointer' }}
                             >
                                 <Link className="nav-link" to="/" aria-current="page">{rubric} <span> ({counter})</span></Link>

@@ -2,7 +2,7 @@ import React from "react";
 import { data } from '../../data/data';
 // import { Link } from "react-router-dom";
 
-function Entries({ getPostname }) {
+function Entries({ getPostname, setLess }) {
     let entries = []
     for (let i = 0; i < 10; i++) {
         entries.push(data[i]);
@@ -26,7 +26,7 @@ function Entries({ getPostname }) {
                             style={{ cursor: 'pointer' }}
                         >
                             <div
-                                onClick={() => getPostname(el.name)}
+                                onClick={() => { getPostname(el.name); setLess(true) }}
                                 className="nav-link">{el.name}
                             </div>
                         </li>

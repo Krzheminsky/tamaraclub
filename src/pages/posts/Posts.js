@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PrevNext from "../../components/PrevNext";
 import Paginations from "../../components/Paginations";
+import PrevNextPost from "../../components/PrevNextPost";
+
 
 function Posts({
     posts,
@@ -15,7 +17,15 @@ function Posts({
     paginate,
     rubricate,
     getPostname,
-    postName }) {
+    postName,
+    showLess,
+    setLess
+}) {
+
+    console.log('showLess', showLess);
+
+
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -37,6 +47,10 @@ function Posts({
                     }
                     {
                         posts.map((post, i) => {
+
+                            const length = 3000;
+                            const text = post.post;
+
                             return (
                                 <article className="post" key={i}>
                                     <div className="entry-wrapper">
@@ -53,7 +67,14 @@ function Posts({
                                                     src={require('../../images/' + post.image)}
                                                     alt={post.rubric} width="35%"
                                                     sizes="(max-width: 555px) 100vw, 555px" />
-                                                <div dangerouslySetInnerHTML={{ __html: post.post }} />
+                                                <div dangerouslySetInnerHTML={{ __html: (showLess && text.length > length) ? `${text.slice(0, length)}...` : text, }} />
+
+                                                {text.length > length ?
+                                                    <div style={{ color: "#CD7B0F", cursor: "pointer" }}
+                                                        onClick={() => { setLess(!showLess); getPostname(post.name) }}
+                                                    >
+                                                        {showLess ? "Читати більше" : "Згорнути"}
+                                                    </div> : null}
 
                                             </div>
                                             <footer className="entry-meta">
@@ -86,6 +107,10 @@ function Posts({
                             totalPosts={totalPosts}
                             paginate={paginate}
 
+                        />
+                        <PrevNextPost
+                            postName={postName}
+                            getPostname={getPostname}
                         />
                     </div>
                 </div>

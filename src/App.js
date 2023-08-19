@@ -21,12 +21,15 @@ function App() {
   const [postPerPage] = useState(3);
   const [currentRubric, setCurrentRubric] = useState('Усі рубрики');
   const [postName, setPostName] = useState('');
+  const [showLess, setShowLess] = useState(true);
+
+
 
   useEffect(() => {
     let rubricPosts = [];
     let onePost = [];
-    if (!postName) {
 
+    if (!postName) {
       if (currentRubric === 'Усі рубрики') {
         setPosts(data);
         setCurrentPage(1);
@@ -43,7 +46,6 @@ function App() {
       for (let i = 0; i < data.length; i++) {
         if (data[i].name === postName) {
           onePost.push(data[i])
-
         }
       }
       setPosts(onePost);
@@ -65,6 +67,7 @@ function App() {
   const rubricate = rubric => { setCurrentRubric(rubric); setPostName(''); }
   const lastPage = Math.ceil(posts.length / postPerPage);
   const getPostname = post => setPostName(post)
+  const setLess = less => setShowLess(less);
 
   return (
     <Container fluid>
@@ -96,6 +99,8 @@ function App() {
                       rubricate={rubricate}
                       getPostname={getPostname}
                       postName={postName}
+                      showLess={showLess}
+                      setLess={setLess}
                     />}
                     />
                     <Route exact path="/about" element={<About />} />
@@ -106,10 +111,12 @@ function App() {
                 <Col lg={3}>
                   <Rubrics
                     rubricate={rubricate}
+                    setLess={setLess}
                   />
                   <Entries
                     getPostname={getPostname}
                     rubricate={rubricate}
+                    setLess={setLess}
                   />
                 </Col>
               </Row>

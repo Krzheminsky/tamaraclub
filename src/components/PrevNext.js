@@ -5,7 +5,10 @@ function PrevNext({ currentPage, lastPage, prevPage, nextPage }) {
 
 
     return (
-        <nav role="navigation" id="nav-below" className="site-navigation paging-navigation prev-next meta-nav">
+        <nav role="navigation" id="nav-below"
+            className="site-navigation paging-navigation prev-next meta-nav"
+            style={{ paddingTop: 0, paddingBottom: 0 }}
+        >
             {currentPage === 1 ? null :
                 <div
                     className="nav-previous"
