@@ -1,6 +1,6 @@
 import React from "react";
 import { data } from '../../data/data';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Entries({ getPostname, setLess }) {
     let entries = []
@@ -8,10 +8,7 @@ function Entries({ getPostname, setLess }) {
         entries.push(data[i]);
     }
 
-    // const posts = data;
-    // const allPosts = data.length;
 
-    // const entries = Array.from(new Set(posts.map(post => post.rubric)));
 
     return (
         <aside id="categories-5" className="widget widget_categories">
@@ -24,11 +21,9 @@ function Entries({ getPostname, setLess }) {
                         <li
                             key={i}
                             style={{ cursor: 'pointer' }}
+                            onClick={() => { getPostname(el.name); setLess(true) }}
                         >
-                            <div
-                                onClick={() => { getPostname(el.name); setLess(true) }}
-                                className="nav-link">{el.name}
-                            </div>
+                            <Link className="nav-link" to="/" aria-current="page">{el.name} </Link>
                         </li>
 
                     ))}

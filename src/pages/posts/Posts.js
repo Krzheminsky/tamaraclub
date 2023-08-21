@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import PrevNext from "../../components/PrevNext";
 import Paginations from "../../components/Paginations";
 import PrevNextPost from "../../components/PrevNextPost";
@@ -21,11 +21,6 @@ function Posts({
     showLess,
     setLess
 }) {
-
-    console.log('showLess', showLess);
-
-
-
 
     useEffect(() => {
         window.scrollTo(0, 0);

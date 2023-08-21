@@ -1403,6 +1403,48 @@ table#wp-calendar td#next {
 
 /* --- Smartphones and small Tablet PCs --- */
 
+@media screen and (max-width:501px) {
+    #nav-menu-wrapper ul {
+        font-size: 3.2vw !important;
+    }
+
+    #nav-menu-wrapper {
+        margin-left: 10px !important;
+    }
+
+    a.header {
+        padding: 4px 6px !important;
+    }
+
+    h2.site-description {
+        font-size: 4.2vw !important;
+    }
+
+    h1.site-title {
+        font-size: 7.2vw !important;
+    }
+
+    h1.entry-title {
+        font-size: 4.2vw !important;
+    }
+
+    hgroup {
+        padding-left: 10px !important;
+    }
+
+    div.entry-content>div>p {
+        font-size: 2.5vw !important;
+    }
+
+    div.entry-content>p {
+        font-size: 2.5vw !important;
+    }
+
+    p.pad-left {
+        padding-left: 30px !important;
+    }
+}
+
 @media screen and (max-width:600px) {
     #nav-menu-wrapper ul {
         font-size: 13px;
