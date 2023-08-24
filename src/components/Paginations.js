@@ -1,6 +1,8 @@
 import React from 'react';
 
-function Paginations({ postPerPage, totalPosts, paginate }) {
+function Paginations({ postPerPage, totalPosts, paginate, currentPage }) {
+
+    console.log('currentPage', currentPage);
 
     const pageNumbers = [];
 
@@ -16,14 +18,25 @@ function Paginations({ postPerPage, totalPosts, paginate }) {
                 <ul className="pagination">
                     {
                         pageNumbers.map(number => (
-                            <li
-                                className='page-item page-link'
-                                key={number}
-                                style={{ cursor: 'pointer' }}
-                                onClick={() => paginate(number)}
-                            >
-                                {number}
-                            </li>
+
+                            number === currentPage ?
+                                <li
+                                    className='page-item page-link'
+                                    key={number}
+                                    style={{ cursor: 'pointer', fontWeight: 'bolder', textDecoration: 'underline' }}
+                                    onClick={() => paginate(number)}
+                                >
+                                    {number}
+                                </li> :
+                                <li
+                                    className='page-item page-link'
+                                    key={number}
+                                    style={{ cursor: 'pointer' }}
+                                    onClick={() => paginate(number)}
+                                >
+                                    {number}
+                                </li>
+
                         ))
                     }
                 </ul>}

@@ -1443,6 +1443,19 @@ table#wp-calendar td#next {
     p.pad-left {
         padding-left: 30px !important;
     }
+
+    blockquote {
+        background: transparent url(images/quote.png) left top no-repeat;
+        background-size: 9% auto;
+    }
+
+
+
+    blockquote>p {
+        font-size: 2.5vw !important;
+        line-height: 1.3 !important;
+    }
+
 }
 
 @media screen and (max-width:600px) {

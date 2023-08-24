@@ -101,6 +101,7 @@ function Posts({
                             postPerPage={postPerPage}
                             totalPosts={totalPosts}
                             paginate={paginate}
+                            currentPage={currentPage}
 
                         />
                         <PrevNextPost
